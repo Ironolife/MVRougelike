@@ -1,4 +1,4 @@
-## Commands: ##
+## Commands:
 
-* Generate CreateTables migration:<br />
-`npm run typeorm migration:generate -- -n CreateTables`
+- Generate CreateTables migration:<br />
+  `yarn typeorm migration:generate -n CreateTables`
