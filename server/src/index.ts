@@ -24,7 +24,7 @@ const main = async () => {
     url: process.env.DATABASE_URL,
     entities: ["dist/entities/*.js"],
     migrations: ["dist/migrations/*.js"],
-    synchronize: !IS_PROD,
+    synchronize: false,
     logging: !IS_PROD
   });
   await connection.runMigrations();
