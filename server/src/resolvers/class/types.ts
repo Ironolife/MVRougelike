@@ -1,7 +1,12 @@
 import { Field, Int, ObjectType } from "type-graphql";
+import {
+  Attributes as _Attributes,
+  Skills as _Skills,
+  Stats as _Stats
+} from "../../entities/Class";
 
 @ObjectType()
-class Attributes {
+class Attributes implements _Attributes {
   @Field(() => Int)
   strength!: number;
 
@@ -22,7 +27,7 @@ class Attributes {
 }
 
 @ObjectType()
-class Skills {
+class Skills implements _Skills {
   @Field(() => Int)
   fishing!: number;
 
@@ -43,7 +48,7 @@ class Skills {
 }
 
 @ObjectType()
-export class Stats {
+export class Stats implements _Stats {
   @Field(() => Attributes)
   attributes!: Attributes;
 
