@@ -1,13 +1,5 @@
 mutation Register($authProps: AuthProps!) {
   register(authProps: $authProps) {
-    errors {
-      field
-      message
-    }
-    user {
-      id
-      email
-      username
-    }
+    ...authResponse
   }
 }

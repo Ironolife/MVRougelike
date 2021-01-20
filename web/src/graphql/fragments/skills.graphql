@@ -1,0 +1,8 @@
+fragment skills on Skills {
+  fishing
+  mining
+  harvesting
+  cooking
+  smithing
+  alchemy
+}

@@ -1,0 +1,8 @@
+fragment attributes on Attributes {
+  strength
+  dexterity
+  vitality
+  intelligence
+  wisdom
+  charisma
+}

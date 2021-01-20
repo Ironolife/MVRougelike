@@ -1,0 +1,5 @@
+mutation Login($authProps: AuthProps!) {
+  login(authProps: $authProps) {
+    ...authResponse
+  }
+}

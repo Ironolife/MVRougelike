@@ -1,0 +1,8 @@
+fragment stats on Stats {
+  attributes {
+    ...attributes
+  }
+  skills {
+    ...skills
+  }
+}
