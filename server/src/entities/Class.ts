@@ -3,7 +3,7 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @ObjectType()
 @Entity()
-class Class extends BaseEntity implements attributes, skills {
+class Class extends BaseEntity {
   @Field(() => Int)
   @PrimaryGeneratedColumn()
   id!: number;
@@ -50,26 +50,3 @@ class Class extends BaseEntity implements attributes, skills {
 }
 
 export default Class;
-
-export type stats = {
-  attributes: attributes;
-  skills: skills;
-};
-
-export type attributes = {
-  strength: number;
-  dexterity: number;
-  vitality: number;
-  intelligence: number;
-  wisdom: number;
-  charisma: number;
-};
-
-export type skills = {
-  fishing: number;
-  mining: number;
-  harvesting: number;
-  cooking: number;
-  smithing: number;
-  alchemy: number;
-};
