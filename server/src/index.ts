@@ -22,7 +22,7 @@ const main = async () => {
   const connection = await createConnection({
     type: "postgres",
     url: process.env.DATABASE_URL,
-    entities: ["dist/entities/*.js"],
+    entities: ["dist/entities/**/*.js"],
     migrations: ["dist/migrations/*.js"],
     synchronize: false,
     logging: !IS_PROD

@@ -54,6 +54,26 @@ export class CreateTables1610853306985 implements MigrationInterface {
                 CONSTRAINT "PK_41fe726bde6432339c1d4595d29" PRIMARY KEY ("id")
             ) INHERITS ("item")
         `);
+    await queryRunner.query(`
+            CREATE TABLE "class" (
+                "id" SERIAL NOT NULL,
+                "name" character varying NOT NULL,
+                "strength" integer NOT NULL,
+                "dexterity" integer NOT NULL,
+                "vitality" integer NOT NULL,
+                "intelligence" integer NOT NULL,
+                "wisdom" integer NOT NULL,
+                "charisma" integer NOT NULL,
+                "fishing" integer NOT NULL,
+                "mining" integer NOT NULL,
+                "harvesting" integer NOT NULL,
+                "cooking" integer NOT NULL,
+                "smithing" integer NOT NULL,
+                "alchemy" integer NOT NULL,
+                CONSTRAINT "UQ_574dd394846fb85d495d0f77dfd" UNIQUE ("name"),
+                CONSTRAINT "PK_0b9024d21bdfba8b1bd1c300eae" PRIMARY KEY ("id")
+            )
+        `);
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
@@ -71,6 +91,9 @@ export class CreateTables1610853306985 implements MigrationInterface {
         `);
     await queryRunner.query(`
             DROP TABLE "item"
+        `);
+    await queryRunner.query(`
+            DROP TABLE "class"
         `);
   }
 }
