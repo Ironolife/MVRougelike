@@ -34,9 +34,12 @@ const main = async () => {
   const app = express();
 
   app.set("trust proxy", 1);
+
+  const origins: string[] = JSON.parse(process.env.CORS_ORIGIN);
   app.use(
     cors({
-      origin: process.env.CORS_ORIGIN,
+      origin: (origin, callback) =>
+        callback(null, origin !== undefined && origins.indexOf(origin) !== -1),
       credentials: true
     })
   );
