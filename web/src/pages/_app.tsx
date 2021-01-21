@@ -1,9 +1,11 @@
+import { ApolloProvider } from "@apollo/client";
 import { AppProps } from "next/app";
+import Head from "next/head";
 import React from "react";
-import "../styles/globals.css";
 import { Provider as StoreProvider } from "react-redux";
 import store from "../store";
-import Head from "next/head";
+import "../styles/globals.css";
+import { client } from "../utils/withApollo";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -16,9 +18,11 @@ const App = ({ Component, pageProps }: AppProps) => {
           content="width=device-width, initial-scale=1.0"
         ></meta>
       </Head>
-      <StoreProvider store={store}>
-        <Component {...pageProps} />
-      </StoreProvider>
+      <ApolloProvider client={client}>
+        <StoreProvider store={store}>
+          <Component {...pageProps} />
+        </StoreProvider>
+      </ApolloProvider>
     </>
   );
 };
