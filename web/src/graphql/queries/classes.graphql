@@ -1,9 +1,5 @@
 query Classes {
   classes {
-    id
-    name
-    stats {
-      ...stats
-    }
+    ...class
   }
 }

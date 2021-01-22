@@ -91,6 +91,11 @@ export type AttributesFragment = Pick<Attributes, 'strength' | 'dexterity' | 'vi
 
 export type AuthResponseFragment = { errors?: Maybe<Array<FieldErrorFragment>>, user?: Maybe<UserFragment> };
 
+export type ClassFragment = (
+  Pick<Class, 'id' | 'name'>
+  & { stats: StatsFragment }
+);
+
 export type FieldErrorFragment = Pick<FieldError, 'field' | 'message'>;
 
 export type SkillsFragment = Pick<Skills, 'fishing' | 'mining' | 'harvesting' | 'cooking' | 'smithing' | 'alchemy'>;
@@ -116,10 +121,7 @@ export type RegisterMutation = { register: AuthResponseFragment };
 export type ClassesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ClassesQuery = { classes: Array<(
-    Pick<Class, 'id' | 'name'>
-    & { stats: StatsFragment }
-  )> };
+export type ClassesQuery = { classes: Array<ClassFragment> };
 
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -181,6 +183,15 @@ export const StatsFragmentDoc = gql`
 }
     ${AttributesFragmentDoc}
 ${SkillsFragmentDoc}`;
+export const ClassFragmentDoc = gql`
+    fragment class on Class {
+  id
+  name
+  stats {
+    ...stats
+  }
+}
+    ${StatsFragmentDoc}`;
 export const LoginDocument = gql`
     mutation Login($authProps: AuthProps!) {
   login(authProps: $authProps) {
@@ -248,14 +259,10 @@ export type RegisterMutationOptions = Apollo.BaseMutationOptions<RegisterMutatio
 export const ClassesDocument = gql`
     query Classes {
   classes {
-    id
-    name
-    stats {
-      ...stats
-    }
+    ...class
   }
 }
-    ${StatsFragmentDoc}`;
+    ${ClassFragmentDoc}`;
 
 /**
  * __useClassesQuery__

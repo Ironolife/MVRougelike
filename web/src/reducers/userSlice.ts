@@ -1,12 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { UserFragment } from "../generated/graphql";
 
+type UserSliceState = UserFragment | null;
+
 const userSlice = createSlice({
   name: "userSlice",
-  initialState: null as UserFragment | null,
+  initialState: null as UserSliceState,
   reducers: {
     setUser: (_, action: PayloadAction<UserFragment>) => action.payload,
-    clearUser: (_) => null
+    clearUser: () => null
   }
 });
 

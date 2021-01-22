@@ -1,0 +1,7 @@
+fragment class on Class {
+  id
+  name
+  stats {
+    ...stats
+  }
+}

@@ -3,10 +3,10 @@ import {
   Attributes as _Attributes,
   Skills as _Skills,
   Stats as _Stats
-} from "../../entities/Class";
+} from "@mvrougelike/shared/types";
 
 @ObjectType()
-class Attributes implements _Attributes {
+class Attributes implements _Attributes<number> {
   @Field(() => Int)
   strength!: number;
 
@@ -27,7 +27,7 @@ class Attributes implements _Attributes {
 }
 
 @ObjectType()
-class Skills implements _Skills {
+class Skills implements _Skills<number> {
   @Field(() => Int)
   fishing!: number;
 
@@ -48,7 +48,7 @@ class Skills implements _Skills {
 }
 
 @ObjectType()
-export class Stats implements _Stats {
+export class Stats implements _Stats<number> {
   @Field(() => Attributes)
   attributes!: Attributes;
 
