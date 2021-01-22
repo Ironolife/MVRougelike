@@ -1,4 +1,10 @@
-import { ExpInfo, getExpInfoFromLevel, Stats } from "@mvrougelike/shared/types";
+import {
+  ExpInfo,
+  getExpInfoFromLevel,
+  GroupKeysUnion,
+  Stats,
+  StatsKeysUnion
+} from "@mvrougelike/shared/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { StatsFragment } from "../generated/graphql";
 
@@ -10,12 +16,15 @@ const statsSlice = createSlice({
   reducers: {
     setStats: (_, action: PayloadAction<StatsFragment>) =>
       Object.entries(action.payload).reduce((acc, [group, stats]) => {
-        acc[group] = Object.entries(stats).reduce((acc, [key, value]) => {
-          acc[key] = getExpInfoFromLevel(value);
-          return acc;
-        }, {} as any);
+        acc[group as StatsKeysUnion<ExpInfo>] = Object.entries(stats).reduce(
+          (acc, [key, value]) => {
+            acc[key as GroupKeysUnion<ExpInfo>] = getExpInfoFromLevel(value);
+            return acc;
+          },
+          {} as { [key in GroupKeysUnion<ExpInfo>]: ExpInfo }
+        );
         return acc;
-      }, {} as any) as Stats<ExpInfo>,
+      }, {} as Stats<ExpInfo>),
     clearStats: () => null
   }
 });

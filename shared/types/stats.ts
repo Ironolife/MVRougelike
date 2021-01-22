@@ -16,7 +16,11 @@ export type Skills<T> = {
   alchemy: T;
 };
 
+export type GroupKeysUnion<T> = keyof Attributes<T> | keyof Skills<T>;
+
 export type Stats<T> = {
   attributes: Attributes<T>;
   skills: Skills<T>;
 };
+
+export type StatsKeysUnion<T> = keyof Stats<T>;
