@@ -29,10 +29,10 @@ export const getExpInfoFromTotal = (total: number): ExpInfo => {
 export const getExpInfoFromLevel = (level: number): ExpInfo => {
   const { K1, K2 } = LEVEL_FUNCTION_CONSTANTS;
 
-  const total = Math.ceil(K1 * Math.pow(level, K2));
+  const total = Math.ceil(K1 * Math.pow(level - 1, K2));
   const target =
-    Math.ceil(K1 * Math.pow(level + 1, K2)) -
-    Math.ceil(K1 * Math.pow(level, K2));
+    Math.ceil(K1 * Math.pow(level, K2)) -
+    Math.ceil(K1 * Math.pow(level - 1, K2));
 
   return {
     level,
