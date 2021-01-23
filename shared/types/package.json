@@ -1,4 +1,4 @@
 {
-  "main": "../dist/@types/index.js",
-  "types": "../dist/@types/index.d.ts"
+  "main": "../dist/types/index.js",
+  "types": "../dist/types/index.d.ts"
 }
