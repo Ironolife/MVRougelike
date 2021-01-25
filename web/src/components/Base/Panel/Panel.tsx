@@ -1,15 +1,15 @@
 import React from "react";
 
 export interface PanelProps {
+  className?: string;
   width: string;
   height: string;
-  className?: string;
 }
 
 const Panel: React.FC<PanelProps> = ({
+  className = "p-4",
   width,
   height,
-  className = "p-4",
   children
 }) => {
   return (

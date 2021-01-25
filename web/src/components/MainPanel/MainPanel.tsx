@@ -23,10 +23,10 @@ const tabs = [
 export interface MainPanelProps {}
 
 const MainPanel: React.FC<MainPanelProps> = ({}) => {
-  const [currentTab, setCurrentTab] = useState(0);
+  const [currentTab, setCurrentTab] = useState(1);
 
   return (
-    <Panel className="flex flex-col p-4" width="700px" height="550px">
+    <Panel className="flex flex-col p-4" width="950px" height="620px">
       <div className="flex mb-4">
         {tabs.map((tab, i) => (
           <Button
