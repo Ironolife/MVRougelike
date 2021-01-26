@@ -2,13 +2,15 @@ import React from "react";
 
 export interface TabContentProps {
   className?: string;
-  header: string;
+  header: string | JSX.Element;
+  footer?: string | JSX.Element;
   flex?: boolean;
 }
 
 const TabContent: React.FC<TabContentProps> = ({
   className = "",
   header,
+  footer = null,
   flex = true,
   children
 }) => {
@@ -26,6 +28,11 @@ const TabContent: React.FC<TabContentProps> = ({
         {header}
       </div>
       <div className="flex-1">{children}</div>
+      {footer && (
+        <div className="pt-2 mt-4 text-xl capitalize border-t border-gray-400">
+          {footer}
+        </div>
+      )}
     </div>
   );
 };

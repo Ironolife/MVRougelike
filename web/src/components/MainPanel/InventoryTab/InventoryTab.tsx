@@ -1,5 +1,6 @@
 import React from "react";
 import TabContent from "../../Base/TabContent/TabContent";
+import GoldIcon from "../../Icons/GoldIcon";
 import Space from "./Space/Space";
 
 export interface InventoryTabProps {}
@@ -10,7 +11,7 @@ const InventoryTab: React.FC<InventoryTabProps> = ({}) => {
   return (
     <div className="h-full flex">
       <TabContent header="equipment">
-        <div className="h-full flex items-center px-4">
+        <div className="h-full flex items-center">
           <div className="w-full flex flex-col" style={{ height: "440px" }}>
             <div className="flex justify-center">
               <Space>1</Space>
@@ -37,8 +38,20 @@ const InventoryTab: React.FC<InventoryTabProps> = ({}) => {
           </div>
         </div>
       </TabContent>
-      <TabContent header="inventory" flex={false}>
-        <div className="h-full flex items-center px-4">
+      <TabContent
+        header={
+          <div className="flex items-center">
+            <div>inventory</div>
+            <div className="flex-1"></div>
+            <div className="flex items-center">
+              [10.0]
+              <GoldIcon className="ml-2 text-yellow-400" />
+            </div>
+          </div>
+        }
+        flex={false}
+      >
+        <div className="h-full flex items-center">
           <div className="grid grid-cols-10 gap-2">
             {inventory.map((_, i) => (
               <Space key={i} />

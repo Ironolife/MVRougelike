@@ -19,10 +19,6 @@ class Item extends BaseEntity {
   @Field(() => Float)
   @Column({ type: "float" })
   value!: number;
-
-  @Field(() => Float)
-  @Column({ type: "float" })
-  weight!: number;
 }
 
 export default Item;
