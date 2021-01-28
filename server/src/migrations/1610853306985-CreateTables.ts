@@ -26,6 +26,7 @@ export class CreateTables1610853306985 implements MigrationInterface {
             CREATE TABLE "location" (
                 "id" SERIAL NOT NULL,
                 "name" character varying NOT NULL,
+                "color" character varying NOT NULL,
                 "stage" integer NOT NULL,
                 CONSTRAINT "UQ_f0336eb8ccdf8306e270d400cf0" UNIQUE ("name"),
                 CONSTRAINT "PK_876d7bdba03c72251ec4c2dc827" PRIMARY KEY ("id")

@@ -15,6 +15,10 @@ class Location extends BaseEntity {
   @Field(() => Int)
   @Column()
   stage!: number;
+
+  @Field(() => String)
+  @Column()
+  color!: string;
 }
 
 export default Location;
