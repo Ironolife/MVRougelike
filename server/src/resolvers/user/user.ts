@@ -14,7 +14,7 @@ const getSuccessfulAuthResponse = async (user: User, req: Request) => {
 };
 
 @Resolver(User)
-export class UserResolver {
+class UserResolver {
   @Mutation(() => AuthResponse)
   async register(
     @Arg("authProps") authProps: AuthProps,
@@ -126,3 +126,5 @@ export class UserResolver {
     });
   }
 }
+
+export default UserResolver;

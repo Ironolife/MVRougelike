@@ -12,8 +12,8 @@ import AppContext from "./@types/appContext";
 import { COOKIE_MAXAGE, IS_PROD } from "./constants";
 import Class from "./entities/Class";
 import User from "./entities/User";
-import { ClassResolver } from "./resolvers/class/class";
-import { UserResolver } from "./resolvers/user/user";
+import ClassResolver from "./resolvers/class/class";
+import UserResolver from "./resolvers/user/user";
 import dataLoader from "./utils/dataloader";
 
 dotenvSafe.config({

@@ -3,7 +3,7 @@ import Class from "../../entities/Class";
 import { Stats } from "./types";
 
 @Resolver(Class)
-export class ClassResolver {
+class ClassResolver {
   @FieldResolver(() => Stats)
   stats(@Root() _class: Class): Stats {
     return {
@@ -17,3 +17,5 @@ export class ClassResolver {
     return Class.find({});
   }
 }
+
+export default ClassResolver;
