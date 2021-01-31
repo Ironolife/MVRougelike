@@ -5,7 +5,7 @@ import _InventoryTab, { InventoryTabProps } from "./InventoryTab";
 export default {
   title: "Components/Main Panel/Inventory Tab",
   component: _InventoryTab
-} as Meta;
+} as Meta<InventoryTabProps>;
 
 export const InventoryTab: React.VFC<InventoryTabProps> = (
   args: InventoryTabProps

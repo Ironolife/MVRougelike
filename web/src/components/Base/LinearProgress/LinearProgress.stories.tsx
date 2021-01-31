@@ -13,7 +13,7 @@ export default {
   args: {
     value: 50
   }
-} as Meta;
+} as Meta<LinearProgressProps>;
 
 export const LinearProgress: React.VFC<LinearProgressProps> = (
   args: LinearProgressProps

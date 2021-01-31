@@ -9,7 +9,7 @@ export default {
     width: "unset",
     height: "unset"
   }
-} as Meta;
+} as Meta<PanelProps>;
 
 export const Panel: React.VFC<PanelProps> = (args: PanelProps) => (
   <_Panel {...args} />

@@ -8,7 +8,7 @@ const Space: React.FC<SpaceProps> = ({ className = "", children }) => {
   return (
     <div
       className={
-        "w-12 h-12 flex justify-center items-center border border-gray-200 bg-gray-100" +
+        "w-12 h-12 flex place-items-center border border-gray-200 bg-gray-100" +
         " " +
         className
       }

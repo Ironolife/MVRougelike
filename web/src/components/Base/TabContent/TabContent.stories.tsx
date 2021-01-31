@@ -8,7 +8,7 @@ export default {
   args: {
     header: "header"
   }
-} as Meta;
+} as Meta<TabContentProps>;
 
 export const TabContent: React.VFC<TabContentProps> = (
   args: TabContentProps

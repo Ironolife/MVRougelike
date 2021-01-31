@@ -6,7 +6,7 @@ import InventoryIcon from "../../../Icons/InventoryIcon";
 export default {
   title: "Components/Main Panel/Inventory Tab/Space",
   component: _Space
-} as Meta;
+} as Meta<SpaceProps>;
 
 export const Space: React.VFC<SpaceProps> = (args: SpaceProps) => (
   <_Space {...args}>

@@ -5,7 +5,7 @@ import _CharacterTab, { CharacterTabProps } from "./CharacterTab";
 export default {
   title: "Components/Main Panel/Character Tab",
   component: _CharacterTab
-} as Meta;
+} as Meta<CharacterTabProps>;
 
 export const CharacterTab: React.VFC<CharacterTabProps> = (
   args: CharacterTabProps
